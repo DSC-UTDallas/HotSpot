@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       
       controller: controller,
       scrollDirection: Axis.vertical,
+      
       children: <Widget>[
         CameraPage(),
         Scaffold(

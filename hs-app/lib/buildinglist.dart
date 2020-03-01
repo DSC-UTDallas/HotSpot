@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'tablepage.dart';
 
 final List<String> entries = <String>['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  final List<String> avail = <String>['23/45', '13/45','43/45','9/45','20/45','34/45','33/45','18/45','41/45'];
+final List<String> avail = <String>['23/45', '13/45','43/45','9/45','20/45','34/45','33/45','18/45','41/45'];
 
 class BuildingList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
-
     return Scrollbar(
       child: ListView.separated(
               padding: const EdgeInsets.all(30),

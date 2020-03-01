@@ -12,7 +12,7 @@ class ScanButton extends StatelessWidget {
             scale: 1.25,
             child: FloatingActionButton(
               backgroundColor: Color.fromRGBO(223,117,0, 1.0), 
-              onPressed: () => controller.jumpToPage(0),
+              onPressed: () => controller.animateToPage(0, duration: Duration(milliseconds: 500), curve: Curves.ease,),
               child: Icon(Icons.crop_free),
             ),
     );
