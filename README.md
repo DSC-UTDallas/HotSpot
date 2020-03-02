@@ -6,20 +6,17 @@ An application to find spaces/spots/tables that are free and available to use on
 ## Instruction to run the code
 
 1. Step 1
-	- Details if needed
+
 2. Step 2
 
 ## Demo
-
-Link to demo video: [Demo](https://youtube.com)
+COMING SOON
 
 ## Summary 
 
-Longer Description
-
 ### Problem We Want To Solve
+UTD Students find it very hard to find seating/rooms/spots around campus. Most students
 
-Description
 
 ### The Solution To The Problem
 
@@ -35,7 +32,8 @@ This  version of the solution has the following features:
 	- Implemented after user testing because...
 
 ## Technologies Used
-
+- Flutter
+- 
 ### Tech Stack
 
 Info about tech stack and why it was used
