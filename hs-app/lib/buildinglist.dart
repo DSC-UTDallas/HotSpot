@@ -4,12 +4,20 @@ import 'tablepage.dart';
 final List<String> entries = <String>['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 final List<String> avail = <String>['23/45', '13/45','43/45','9/45','20/45','34/45','33/45','18/45','41/45'];
 
-class BuildingList extends StatelessWidget {
+class BuildingList extends StatefulWidget {
 
+  @override
+  _BuildingListState createState() => _BuildingListState();
+}
+
+class _BuildingListState extends State<BuildingList> {
+  //String dropdownValue = 'One';
   @override
   Widget build(BuildContext context) {
     return Scrollbar(
-      child: ListView.separated(
+      child: Stack(
+        children: <Widget>[
+          ListView.separated(
               padding: const EdgeInsets.all(30),
               itemCount: entries.length,
               itemBuilder: (BuildContext context, int index) {
@@ -86,6 +94,30 @@ class BuildingList extends StatelessWidget {
               },
             separatorBuilder: (BuildContext context, int index) => const Divider(),
           ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Transform.scale(
+              scale: 1.75,
+              origin: Offset(-10, -40),
+              child: PopupMenuButton(
+                //splashColor: Color.fromARGB(0, 0, 0, 0),
+                //color: Colors.white,
+                icon: Icon(Icons.more_vert,
+                color: Colors.white), 
+                itemBuilder: (context) =>
+                  <String>['About', 'Feedback', 'Logout']
+                  .map<PopupMenuEntry<String>>((String value) {
+                    return PopupMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+                },).toList(),
+                
+              ),
+            ),
+          ),
+        ],
+    ),
     );
   }
 }
