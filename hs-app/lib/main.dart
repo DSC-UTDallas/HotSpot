@@ -21,11 +21,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    BuildingList(),
+    Container(
+      color: Colors.blue,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     final controller = PageController(
       initialPage: 0,
     ); 
+    
     
     // RGBO orange: 223,117,0, 1.0 
     // RGBO green: 18, 71, 52, 1.0
@@ -39,8 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
         CameraPage(),
         Scaffold(
           backgroundColor: Colors.grey[900], 
-          body: BuildingList(),
+          body: _children[_currentIndex],
           bottomNavigationBar: BottomNavigationBar(
+            onTap: onTabTapped,
+            currentIndex: _currentIndex,
             unselectedItemColor: Color.fromRGBO(100, 100, 100, 1.0),
             backgroundColor: Color.fromRGBO(20, 20, 20, 1.0),
             selectedItemColor: Color.fromRGBO(223,117,0, 1.0), 
@@ -67,7 +78,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ],
     );
+    
   }
+  void onTabTapped(int index) {
+   setState(() {
+     _currentIndex = index;
+   });
+ }
 }
 
 
