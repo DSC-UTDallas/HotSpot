@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  loading: ^1.0.2
 
   splashscreen:
 
@@ -40,7 +41,9 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - assets/
+    - cover.png
+    - default.png
+    - profile.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
