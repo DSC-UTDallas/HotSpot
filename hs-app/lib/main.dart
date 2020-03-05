@@ -48,9 +48,11 @@ void initState() {
 
      return new Scaffold(
     body: new Center(
-      child: new Image.asset('cover.png'),
+      child: new Image.asset('cover.png'), 
     ),
-          backgroundColor: Colors.lightBlueAccent,
+      
+        backgroundColor: Colors.blue[50],
+          
       
   );
 
