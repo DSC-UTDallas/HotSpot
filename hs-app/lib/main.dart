@@ -21,6 +21,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int pageIndex = 0;
+  ScrollPhysics physics;
   int _currentIndex = 0;
   final List<Widget> _children = [
     BuildingList(),
@@ -76,7 +78,21 @@ class _HomeScreenState extends State<HomeScreen> {
       
       controller: controller,
       scrollDirection: Axis.vertical,
-      
+      physics: physics,
+      onPageChanged: (value) {
+        pageIndex++;
+        if(pageIndex == 1){
+          setState(() {
+            physics = new NeverScrollableScrollPhysics();
+          });
+        }
+        else{
+          pageIndex = 0;
+          setState(() {
+            physics = null;
+          });
+        }
+      },
       children: <Widget>[
         CameraPage(),
         Scaffold(
