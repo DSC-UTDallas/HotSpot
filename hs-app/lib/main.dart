@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'homeScreen.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 String text = 'test';
 
@@ -48,10 +49,15 @@ void initState() {
 
      return new Scaffold(
     body: new Center(
-      child: new Image.asset('cover.png'), 
+      child: new Column(mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+           children:<Widget>[ new Image.asset('cover.png'),Container(height: 75),SpinKitFadingCircle(
+  color: Colors.blue,
+  size: 50.0,
+)] ) 
     ),
       
-        backgroundColor: Colors.blue[50],
+    backgroundColor: Colors.blue[50],
           
       
   );
